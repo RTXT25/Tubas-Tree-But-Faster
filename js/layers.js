@@ -522,14 +522,14 @@ addLayer("a", {
         ]
     },
     2: {
-        requirementDescription: "9 ascension points",
+        requirementDescription: "2 ascension points",
         effectDescription: "Gain 100% of prestige point gain every second.",
-        done() { return player.a.points.gte(9) },
+        done() { return player.a.points.gte(2) },
     },
     3: {
-        requirementDescription: "10 ascension points",
+        requirementDescription: "2 ascension points",
         effectDescription: "Automate the 2nd prestige buyable.",
-        done() { return player.a.points.gte(10) },
+        done() { return player.a.points.gte(2) },
         unlocked() { return hasUpgrade("a",21) || hasMilestone("a",3) || player.t.total.gte(1) || player.r.total.gte(1) },
         toggles: [
           ["p","auto2"]

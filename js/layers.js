@@ -1198,48 +1198,48 @@ addLayer("r", {
   },
     milestones: {
     0: {
-        requirementDescription: "2 total quarks",
+        requirementDescription: "1 total quarks",
         effectDescription: "Keep prestige & ascension upgrades on reset.",
-        done() { return player.r.total.gte(2) }
+        done() { return player.r.total.gte(1) }
     },
     1: {
-        requirementDescription: "3 total quarks",
+        requirementDescription: "2 total quarks",
         effectDescription: "Keep ascension milestones on reset.",
-        done() { return player.r.total.gte(3) },
+        done() { return player.r.total.gte(2) },
     },
     2: {
-        requirementDescription: "4 total quarks",
+        requirementDescription: "2 total quarks",
         effectDescription: "Keep transcension milestones on reset.",
-        done() { return player.r.total.gte(4) },
+        done() { return player.r.total.gte(2) },
     },
     3: {
-        requirementDescription: "5 total quarks",
+        requirementDescription: "3 total quarks",
         effectDescription: "Keep transcension upgrades on reset.",
-        done() { return player.r.total.gte(5) },
+        done() { return player.r.total.gte(3) },
     },
     4: {
-        requirementDescription: "6 total quarks",
+        requirementDescription: "3 total quarks",
         effectDescription: "Keep challenge completions on reset.",
-        done() { return player.r.total.gte(6) },
+        done() { return player.r.total.gte(3) },
     },
     5: {
-        requirementDescription: "8 total quarks",
+        requirementDescription: "3 total quarks",
         effectDescription: "Gain 100% of transcension point gain per second.",
-        done() { return player.r.total.gte(8) },
+        done() { return player.r.total.gte(3) },
     },
     6: {
-        requirementDescription: "1e100 quarks",
+        requirementDescription: "10 quarks",
         effectDescription: "Automate the 3rd ascension buyable.",
-        done() { return player.r.points.gte(1e100) },
+        done() { return player.r.points.gte(10) },
         unlocked() { return hasUpgrade("a",41) },
         toggles: [
           ["a","auto3"]
         ]
     },
     7: {
-        requirementDescription: "1e8000 quarks",
+        requirementDescription: "18quarks",
         effectDescription: "Gain 100% of quark gain per second.",
-        done() { return player.r.points.gte("1e8000") },
+        done() { return player.r.points.gte("18") },
         unlocked() { return hasChallenge("r",21) },
     },
   },
@@ -1255,16 +1255,16 @@ addLayer("r", {
         onEnter(){player.points = new Decimal(10)},
         goal() {
     return [
-        new Decimal("1e180283"),
-        new Decimal("1e184546"),
-        new Decimal("1e222630"),
-        new Decimal("1e226089"),
-        new Decimal("1e309538"),
-        new Decimal("1e512042"),
-        new Decimal("1e629507"),
-        new Decimal("1e2663814"),
-        new Decimal("1e3138864"),
-        new Decimal("1e10782587"),
+        new Decimal("1"),
+        new Decimal("2"),
+        new Decimal("3"),
+        new Decimal("4"),
+        new Decimal("5"),
+        new Decimal("6"),
+        new Decimal("7"),
+        new Decimal("8"),
+        new Decimal("9"),
+        new Decimal("10"),
         new Decimal(Infinity)
     ][challengeCompletions("r", 11)]
     },
@@ -1279,16 +1279,16 @@ addLayer("r", {
         unlocked(){return hasUpgrade("r",41)},
         goal() {
     return [
-        new Decimal("1e356461"),
-        new Decimal("1e460474"),
-        new Decimal("1e477025"),
-        new Decimal("1e1032046"),
-        new Decimal("1e1227832"),
-        new Decimal("1e1381373"),
-        new Decimal("1e8599550"),
-        new Decimal("1e16624937"),
-        new Decimal("1e160488091"),
-        new Decimal("1e1724000000"),
+        new Decimal("11"),
+        new Decimal("12"),
+        new Decimal("13"),
+        new Decimal("14"),
+        new Decimal("15"),
+        new Decimal("16"),
+        new Decimal("17"),
+        new Decimal("18"),
+        new Decimal("19"),
+        new Decimal("20"),
         new Decimal(Infinity)
     ][challengeCompletions("r", 12)]
     },
@@ -1303,16 +1303,16 @@ addLayer("r", {
         unlocked(){return hasUpgrade("r",41)},
         goal() {
     return [
-        new Decimal("1e399503"),
-        new Decimal("1e472207"),
-        new Decimal("1e972792"),
-        new Decimal("1e1442182"),
-        new Decimal("1e15116546"),
-        new Decimal("1e42011137"),
-        new Decimal("1e48173985"),
-        new Decimal("1e52147280"),
-        new Decimal("1e425292138"),
-        new Decimal("1e479678334"),
+        new Decimal("21"),
+        new Decimal("22"),
+        new Decimal("23"),
+        new Decimal("24"),
+        new Decimal("25"),
+        new Decimal("26"),
+        new Decimal("27"),
+        new Decimal("28"),
+        new Decimal("29"),
+        new Decimal("30"),
         new Decimal(Infinity)
     ][challengeCompletions("r", 21)]
     },
@@ -1327,16 +1327,16 @@ addLayer("r", {
         unlocked(){return hasUpgrade("r",41)},
         goal() {
     return [
-        new Decimal("1e37503897"),
-        new Decimal("1e47336955"),
-        new Decimal("1e425000000"),
-        new Decimal("1e475000000"),
-        new Decimal("1e485000000"),
-        new Decimal("1e666000000"),
-        new Decimal("1e750000000"),
-        new Decimal("1e850000000"),
-        new Decimal("1e1250000000"),
-        new Decimal("1e1400000000"),
+        new Decimal("31"),
+        new Decimal("31"),
+        new Decimal("33"),
+        new Decimal("34"),
+        new Decimal("35"),
+        new Decimal("36"),
+        new Decimal("37"),
+        new Decimal("38"),
+        new Decimal("39"),
+        new Decimal("40"),
         new Decimal(Infinity)
     ][challengeCompletions("r", 22)]
     },
@@ -1352,16 +1352,16 @@ addLayer("r", {
         onEnter(){return player.points = new Decimal(10); player.r.charge = new Decimal(1)},
         goal() {
     return [
-        new Decimal("1e575000000"),
-        new Decimal("1e659358530"),
-        new Decimal("1e1070000000"),
-        new Decimal("1e1145000000"),
-        new Decimal("1e1300000000"),
-        new Decimal("1e1410000000"),
-        new Decimal("1e1430000000"),
-        new Decimal("1e1475000000"),
-        new Decimal("1e1500000000"),
-        new Decimal("1e1550000000"),
+        new Decimal("41"),
+        new Decimal("42"),
+        new Decimal("43"),
+        new Decimal("44"),
+        new Decimal("45"),
+        new Decimal("46"),
+        new Decimal("47"),
+        new Decimal("48"),
+        new Decimal("49"),
+        new Decimal("50"),
         new Decimal(Infinity)
     ][challengeCompletions("r", 31)]
     },
@@ -1517,7 +1517,7 @@ addLayer("sp", {
   },
   milestones: {
     0: {
-        requirementDescription: "1e15 super-prestige points",
+        requirementDescription: "1 super-prestige points",
         effectDescription: "Keep prestige upgrades on reset.",
         done() { return player.sp.points.gte(1e15) }
     },

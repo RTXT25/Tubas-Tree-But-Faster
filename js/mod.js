@@ -1,7 +1,7 @@
 let modInfo = {
-	name: "Tuba's Tree",
-	id: "tubas-tree",
-	author: "randomtuba",
+	name: "Tuba's Tree But Faster",
+	id: "tubas-treeBF",
+	author: "randomtuba edited by RTXT25",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -162,7 +162,7 @@ var backgroundStyle = {
 
 // You can change this if you have things that can be messed up by long tick lengths
 function maxTickLength() {
-	return(3600) // Default is 1 hour which is just arbitrarily large
+	return(69420) // Default is 1 hour which is just arbitrarily large
 }
 
 // Use this if you need to undo inflation from an older version. If the version is older than the version that fixed the issue,

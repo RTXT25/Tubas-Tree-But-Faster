@@ -274,7 +274,7 @@ addLayer("a", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         mult = mult.mul(hasUpgrade("a",13)?upgradeEffect("a", 13):1)
-        mult = mult.mul(hasUpgrade("a",23)?1000:1)
+        mult = mult.mul(hasUpgrade("a",23)?10000:1)
         mult = mult.mul(hasUpgrade("t",12)?upgradeEffect("t",12):1)
         mult = mult.mul(hasUpgrade("t",14)?(inChallenge("t",21) || inChallenge("t",41) || inChallenge("t",52) ? new Decimal(1) : player.t.shards.add(1).pow(new Decimal(0.5).mul(hasUpgrade("t",13)?3:1).mul(hasUpgrade("p",33)?2:1)).mul(hasChallenge("t",21)?1e8:1)):1)
         mult = mult.mul(hasUpgrade("t",21)?1e15:1)
@@ -509,27 +509,27 @@ addLayer("a", {
   },
     milestones: {
     0: {
-        requirementDescription: "10 ascension points",
+        requirementDescription: "1 ascension points",
         effectDescription: "Keep prestige upgrades on reset.",
-        done() { return player.a.points.gte(10) }
+        done() { return player.a.points.gte(1) }
     },
     1: {
-        requirementDescription: "500 ascension points",
+        requirementDescription: "2 ascension points",
         effectDescription: "Automate the prestige buyable.",
-        done() { return player.a.points.gte(500) },
+        done() { return player.a.points.gte(2) },
         toggles: [
           ["p","auto"]
         ]
     },
     2: {
-        requirementDescription: "1e9 ascension points",
+        requirementDescription: "9 ascension points",
         effectDescription: "Gain 100% of prestige point gain every second.",
-        done() { return player.a.points.gte(1e9) },
+        done() { return player.a.points.gte(9) },
     },
     3: {
-        requirementDescription: "1e100 ascension points",
+        requirementDescription: "10 ascension points",
         effectDescription: "Automate the 2nd prestige buyable.",
-        done() { return player.a.points.gte(1e100) },
+        done() { return player.a.points.gte(10) },
         unlocked() { return hasUpgrade("a",21) || hasMilestone("a",3) || player.t.total.gte(1) || player.r.total.gte(1) },
         toggles: [
           ["p","auto2"]
@@ -795,43 +795,43 @@ addLayer("t", {
     },
     milestones: {
     0: {
-        requirementDescription: "3 total transcension points",
+        requirementDescription: "1 total transcension points",
         effectDescription: "Keep prestige upgrades on reset.",
-        done() { return player.t.total.gte(3) }
+        done() { return player.t.total.gte(1) }
     },
     1: {
-        requirementDescription: "4 total transcension points",
+        requirementDescription: "2 total transcension points",
         effectDescription: "Keep ascension milestones on reset.",
-        done() { return player.t.total.gte(4) },
+        done() { return player.t.total.gte(2) },
     },
     2: {
-        requirementDescription: "5 total transcension points",
+        requirementDescription: "3 total transcension points",
         effectDescription: "Keep ascension upgrades on reset.",
-        done() { return player.t.total.gte(5) },
+        done() { return player.t.total.gte(3) },
     },
     3: {
-        requirementDescription: "8 total transcension points",
+        requirementDescription: "4 total transcension points",
         effectDescription: "Gain 100% of ascension point gain per second.",
-        done() { return player.t.total.gte(8) },
+        done() { return player.t.total.gte(4) },
     },
     4: {
-        requirementDescription: "12 total transcension points",
+        requirementDescription: "2 total transcension points",
         effectDescription: "Buy max buyables.",
-        done() { return player.t.total.gte(12) },
+        done() { return player.t.total.gte(2) },
     },
     5: {
-        requirementDescription: "1e40 transcension points",
+        requirementDescription: "14 transcension points",
         effectDescription: "Automate the ascension buyable and all future prestige buyables.",
-        done() { return player.t.points.gte(1e40) },
+        done() { return player.t.points.gte(14) },
         unlocked(){return hasChallenge("t",12) || hasMilestone("t",5) || player.r.total.gte(1)},
         toggles: [
           ["a","auto"]
         ]
     },
     6: {
-        requirementDescription: "1e2000 transcension points",
+        requirementDescription: "120 transcension points",
         effectDescription: "Automate the 2nd ascension buyable and shard buyables.",
-        done() { return player.t.points.gte("1e2000") },
+        done() { return player.t.points.gte("120") },
         unlocked(){return hasUpgrade("a",35) || hasMilestone("t",6) || player.r.total.gte(1)},
         toggles: [
           ["a","auto2"],
@@ -843,81 +843,81 @@ addLayer("t", {
     11: {
         name: "Impotence",
         challengeDescription: "The multiplier from <b>Ascension Bonus</b> is 1x.",
-        goalDescription: "Reach 1e215 points.",
+        goalDescription: "Reach 1215 points.",
         rewardDescription: "Gain 1e50x more ascension points.",
-        canComplete: function() {return player.points.gte("1e215")},
+        canComplete: function() {return player.points.gte("1215")},
         unlocked(){return hasUpgrade("t",23)}
     },
     12: {
         name: "Time Dilation",
         challengeDescription: "Points are ^0.75.",
-        goalDescription: "Reach 1e660 points.",
+        goalDescription: "Reach 1660 points.",
         rewardDescription: "Points ^1.05, and unlock 5 new prestige upgrades.",
-        canComplete: function() {return player.points.gte("1e660")},
+        canComplete: function() {return player.points.gte("1660")},
         unlocked(){return hasUpgrade("t",23)}
     },
     21: {
         name: "No Shards",
         challengeDescription: "Shards are useless.",
-        goalDescription: "Reach 1e9000 points.",
+        goalDescription: "Reach 19000 points.",
         rewardDescription: "Gain 100,000,000x more shards.",
-        canComplete: function() {return player.points.gte("1e9000")},
+        canComplete: function() {return player.points.gte("19000")},
         unlocked(){return hasUpgrade("t",23)}
     },
     22: {
         name: "Higher Costs",
         challengeDescription: "The ascension buyable scales significantly faster.",
-        goalDescription: "Reach 1e7280 points.",
+        goalDescription: "Reach 17280 points.",
         rewardDescription: "Unlock the 3rd prestige buyable.",
-        canComplete: function() {return player.points.gte("1e7280")},
+        canComplete: function() {return player.points.gte("17280")},
         unlocked(){return hasUpgrade("t",23)}
     },
     31: {
         name: "Anti-Prestigious",
         challengeDescription: "Prestige points are ^0.1.",
-        goalDescription: "Reach 1e2870 points.",
+        goalDescription: "Reach 12870 points.",
         rewardDescription: "Prestige points ^1.05.",
-        canComplete: function() {return player.points.gte("1e2870")},
+        canComplete: function() {return player.points.gte("12870")},
         unlocked(){return hasUpgrade("t",23)}
     },
     32: {
         name: "Financial Recession",
         challengeDescription: "Points are ^0.01.",
-        goalDescription: "Reach 2.00e37 points.",
+        goalDescription: "Reach 237 points.",
         rewardDescription: "Unlock 2 new transcension upgrades.",
-        canComplete: function() {return player.points.gte("2e37")},
+        canComplete: function() {return player.points.gte("237")},
         unlocked(){return hasUpgrade("t",23)}
     },
     41: {
         name: "No Shards II",
         challengeDescription: "Shards are useless, and points are ^0.1.",
-        goalDescription: "Reach 1e190 points.",
+        goalDescription: "Reach 1190 points.",
         rewardDescription: "Gain 1e20x more shards.",
-        canComplete: function() {return player.points.gte("1e190")},
+        canComplete: function() {return player.points.gte("1190")},
         unlocked(){return hasUpgrade("t",32)}
     },
     42: {
         name: "Anti-Ascension",
         challengeDescription: "Ascension points are ^0.05.",
-        goalDescription: "Reach 1e360,000 points.",
+        goalDescription: "Reach 1,360,000 points.",
         rewardDescription: "Unlock 2 new transcension upgrades. (Hey, this is unoriginal, Challenge 6 already used this reward!)",
-        canComplete: function() {return player.points.gte("1e360000")},
+        canComplete: function() {return player.points.gte("1360000")},
         unlocked(){return hasUpgrade("t",32)}
     },
     51: {
         name: "Power Outage",
         challengeDescription: "Quark Energy does nothing, and shards ^0.2. (This challenge is super weak)",
-        goalDescription: "Reach 1e765,000 points.",
+        goalDescription: "Reach 1,765,000 points.",
         rewardDescription: "Unlock 5 new prestige upgrades, and quark energy ^1.1.",
-        canComplete: function() {return player.points.gte("1e765000")},
+        canComplete: function() {return player.points.gte("1765000")},
         unlocked(){return hasUpgrade("r",35)}
     },
     52: {
         name: "Sadistic",
         challengeDescription: "Challenges 1-9 are all applied at once.",
-        goalDescription: "Reach 100,000 points.",
+        goalDescription: "Reach 100 points.",
         rewardDescription: "Shards ^1.1.",
-        canComplete: function() {return player.points.gte("100000")},
+        canComplete: function() {return player.points.gte("100")},
         unlocked(){return hasUpgrade("a",42)}
     },
   },

@@ -4,7 +4,7 @@ addLayer("p", {
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		points: new Decimal(0),
+		points: new Decimal(696969696969696969),
     }},
     passiveGeneration(){
       return hasMilestone("a", 2) ? 1 : 0
@@ -377,19 +377,19 @@ addLayer("a", {
       22: {
         title: "Upgrade Unlock",
         description: "Unlock some new prestige upgrades.",
-        cost: new Decimal(1e100),
+        cost: new Decimal(1e10),
         unlocked(){return hasUpgrade("a",15) || hasUpgrade("a",22) || player.t.total.gte(1) || player.r.total.gte(1)},
       },
       23: {
         title: "Small Ascension Multiplier",
         description: "Multiply ascension point gain by 1000.",
-        cost: new Decimal(1e275),
+        cost: new Decimal(1e25),
         unlocked(){return hasUpgrade("a",15) || hasUpgrade("a",23) || player.t.total.gte(1) || player.r.total.gte(1)},
       },
       24: {
         title: "Transcended Points",
         description: "Gain more transcension points based on points.",
-        cost: new Decimal("1e315"),
+        cost: new Decimal("1e35"),
         unlocked(){return hasUpgrade("t",15) || hasUpgrade("a",24) || player.r.total.gte(1)},
         effect(){return player.points.add(1).log10().add(1).cbrt()},
         effectDisplay(){return `x${format(this.effect())}`}
@@ -397,19 +397,19 @@ addLayer("a", {
       25: {
         title: "Buyable Unlock III",
         description: "Unlock a buyable for Ascension.",
-        cost: new Decimal("1e315"),
+        cost: new Decimal("1e35"),
         unlocked(){return hasUpgrade("t",15) || hasUpgrade("a",25) || player.r.total.gte(1)},
       },
       31: {
         title: "ASCENDED",
         description: "Ascension points ^1.1.",
-        cost: new Decimal("1e61400"),
+        cost: new Decimal("1e6140"),
         unlocked(){return hasUpgrade("t",31) || hasUpgrade("a",31) || player.r.total.gte(1)},
       },
       32: {
         title: "Shard Multiplier",
         description: "Gain more shards based on transcension points. (hardcaps at 1e200x)",
-        cost: new Decimal("1e62425"),
+        cost: new Decimal("1e6245"),
         unlocked(){return hasUpgrade("t",31) || hasUpgrade("a",32) || player.r.total.gte(1)},
         effect(){return player.t.points.root(100).add(1).gte("1e200") ? new Decimal(1e200) : player.t.points.root(100).add(1)},
         effectDisplay(){return `x${format(this.effect())}`}
@@ -417,49 +417,49 @@ addLayer("a", {
       33: {
         title: "Buyable Unlock IV",
         description: "Unlock a second buyable for Ascension.",
-        cost: new Decimal("1e62800"),
+        cost: new Decimal("1e6280"),
         unlocked(){return hasUpgrade("t",31) || hasUpgrade("a",33) || player.r.total.gte(1)},
       },
       34: {
         title: "Buyable Boost",
         description: "The 2nd ascension buyable is cheaper.",
-        cost: new Decimal("1e67400"),
+        cost: new Decimal("1e6740"),
         unlocked(){return hasUpgrade("t",31) || hasUpgrade("a",34) || player.r.total.gte(1)},
       },
       35: {
         title: "Inflation II",
         description: "<b>Self-Synergy</b> uses an even better formula.",
-        cost: new Decimal("1e113000"),
+        cost: new Decimal("1e11300"),
         unlocked(){return hasUpgrade("t",31) || hasUpgrade("a",35) || player.r.total.gte(1)},
       },
       41: {
         title: "Buyable Unlock V",
         description: "Unlock a third buyable for Ascension.",
-        cost: new Decimal("1e850000"),
+        cost: new Decimal("1e85000"),
         unlocked(){return hasUpgrade("p",45) || hasUpgrade("a",41)},
       },
       42: {
         title: "Another Gift Bonus",
         description: "Gain 1,000,000x more gifts, and unlock a new challenge. This should help on the journey to max your spirits.",
-        cost: new Decimal("1e5500000"),
+        cost: new Decimal("1e550000"),
         unlocked(){return hasUpgrade("p",45) || hasUpgrade("a",42)},
       },
       43: {
         title: "Another Shard Exponent",
         description: "Shards ^1.25. It's fun when numbers go up.",
-        cost: new Decimal("1e5700000"),
+        cost: new Decimal("1e570000"),
         unlocked(){return hasUpgrade("p",45) || hasUpgrade("a",43)},
       },
       44: {
         title: "Softcap Extinguisher",
         description: "Weaken the shards softcap.",
-        cost: new Decimal("1e8010000"),
+        cost: new Decimal("1e801000"),
         unlocked(){return hasUpgrade("p",45) || hasUpgrade("a",44)},
       },
       45: {
         title: "One Last Gift Multiplier",
         description: "Gain 1,000,000,000x more gifts again. I promise, this is the last one.",
-        cost: new Decimal("1e9410000"),
+        cost: new Decimal("1e941000"),
         unlocked(){return hasUpgrade("p",45) || hasUpgrade("a",45)},
       },
     },

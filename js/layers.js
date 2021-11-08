@@ -199,7 +199,7 @@ addLayer("p", {
         unlocked(){return hasChallenge("t",51) || hasUpgrade("p",45)},
       },
     },
-    buyables: {
+    buyables: { 
     11: {
         title: "Point Quadrupler",
         cost(x) { return inChallenge("r",21) || inChallenge("r",31) ? new Decimal(Infinity) : new Decimal(10).mul(new Decimal(10).pow(x)) },

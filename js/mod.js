@@ -8,7 +8,7 @@ let modInfo = {
 	discordName: "randomtuba's Discord Server",
 	discordLink: "https://discord.gg/VxHzjtgdA4",
 	initialStartPoints: new Decimal (0), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	offlineLimit: 100000000000000000000000000,  // In hours
 }
 
 // Set your version in num and name
@@ -162,7 +162,7 @@ var backgroundStyle = {
 
 // You can change this if you have things that can be messed up by long tick lengths
 function maxTickLength() {
-	return(69420) // Default is 1 hour which is just arbitrarily large
+	return(1) // Default is 1 hour which is just arbitrarily large
 }
 
 // Use this if you need to undo inflation from an older version. If the version is older than the version that fixed the issue,
